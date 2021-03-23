@@ -72,7 +72,12 @@ class _ColorefulScreenCropState extends State<ColorefulScreenCrop> {
                   },
                   initialSize: 0.5,
                   cornerDotBuilder: (size, cornerIndex) => DotControl(
-                    color: Colors.amberAccent,
+                    color: const [
+                      Colors.amberAccent,
+                      Colors.tealAccent,
+                      Colors.pinkAccent,
+                      Colors.white,
+                    ][cornerIndex],
                   ),
                   maskColor: Colors.green.shade300.withAlpha(200),
                   baseColor: Colors.green,
