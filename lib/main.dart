@@ -1,4 +1,5 @@
 import 'package:cropyourimage_gallery/page/colorful_screen_crop.dart';
+import 'package:cropyourimage_gallery/page/configurable_crop.dart';
 import 'package:cropyourimage_gallery/page/full_screen_crop.dart';
 import 'package:cropyourimage_gallery/provider/image_data_notifier.dart';
 import 'package:flutter/material.dart';
@@ -39,12 +40,15 @@ class _MyHomePageState extends State<MyHomePage> {
   static const pages = const [
     FullScreenCrop(),
     ColorefulScreenCrop(),
+    ConfigurableCrop(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Gallery | crop_your_image'),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: pages
