@@ -5,14 +5,14 @@ import 'package:cropyourimage_gallery/provider/image_data_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ColoredScreenCrop extends StatefulWidget {
-  const ColoredScreenCrop();
+class ColorefulScreenCrop extends StatefulWidget {
+  const ColorefulScreenCrop();
 
   @override
-  _ColoredScreenCropState createState() => _ColoredScreenCropState();
+  _ColorefulScreenCropState createState() => _ColorefulScreenCropState();
 }
 
-class _ColoredScreenCropState extends State<ColoredScreenCrop> {
+class _ColorefulScreenCropState extends State<ColorefulScreenCrop> {
   final _controller = CropController();
 
   var _isProcessing = false;
@@ -36,7 +36,7 @@ class _ColoredScreenCropState extends State<ColoredScreenCrop> {
       appBar: AppBar(
         backgroundColor: Colors.lightBlue.shade50,
         title: Text(
-          'Colored Screen Crop',
+          'Coloreful Screen Crop',
           style: TextStyle(color: Colors.blue),
         ),
         actions: [

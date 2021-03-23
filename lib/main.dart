@@ -1,4 +1,4 @@
-import 'package:cropyourimage_gallery/page/colored_screen_crop.dart';
+import 'package:cropyourimage_gallery/page/colorful_screen_crop.dart';
 import 'package:cropyourimage_gallery/page/full_screen_crop.dart';
 import 'package:cropyourimage_gallery/provider/image_data_notifier.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +38,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   static const pages = const [
     FullScreenCrop(),
-    ColoredScreenCrop(),
+    ColorefulScreenCrop(),
   ];
 
   @override
