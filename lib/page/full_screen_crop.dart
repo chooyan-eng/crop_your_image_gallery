@@ -59,13 +59,13 @@ class _FullScreenCropState extends State<FullScreenCrop> {
         ),
       ),
       body: Visibility(
-        visible: imageData.hasData && !_isProcessing,
-        child: imageData.hasData
+        visible: imageData.loadData.length > 1 && !_isProcessing,
+        child: imageData.loadData.length > 1
             ? Visibility(
                 visible: _croppedData == null,
                 child: Crop(
                   controller: _controller,
-                  image: imageData.loadData[0],
+                  image: imageData.loadData[1],
                   onCropped: (cropped) {
                     croppedData = cropped;
                     isProcessing = false;
