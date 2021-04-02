@@ -43,7 +43,7 @@ class _ConfigurableCropState extends State<ConfigurableCrop> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'Full Screen Crop',
+          'Configurable Crop',
           style: TextStyle(color: Colors.black87),
         ),
         actions: [
