@@ -1,3 +1,4 @@
+import 'package:cropyourimage_gallery/page/multiple_crop.dart';
 import 'package:cropyourimage_gallery/page/colorful_screen_crop.dart';
 import 'package:cropyourimage_gallery/page/configurable_crop.dart';
 import 'package:cropyourimage_gallery/page/full_screen_crop.dart';
@@ -41,6 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
     FullScreenCrop(),
     ColorefulScreenCrop(),
     ConfigurableCrop(),
+    BottomSheetCrop(),
   ];
 
   @override
@@ -84,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
             )
             .expand((element) => element)
             .toList()
-              ..removeLast(),
+          ..removeLast(),
       ),
     );
   }
