@@ -71,13 +71,13 @@ class _ColorefulScreenCropState extends State<ColorefulScreenCrop> {
                     isProcessing = false;
                   },
                   initialSize: 0.5,
-                  cornerDotBuilder: (size, cornerIndex) => DotControl(
-                    color: const [
-                      Colors.amberAccent,
-                      Colors.tealAccent,
-                      Colors.pinkAccent,
-                      Colors.white,
-                    ][cornerIndex],
+                  cornerDotBuilder: (size, edge) => DotControl(
+                    color: {
+                      EdgeAlignment.topLeft: Colors.amberAccent,
+                      EdgeAlignment.topRight: Colors.tealAccent,
+                      EdgeAlignment.bottomRight: Colors.pinkAccent,
+                      EdgeAlignment.bottomLeft: Colors.white,
+                    }[edge]!,
                   ),
                   maskColor: Colors.green.shade300.withAlpha(200),
                   baseColor: Colors.green,
