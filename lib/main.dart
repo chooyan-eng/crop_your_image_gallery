@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
     FullScreenCrop(),
     ColorefulScreenCrop(),
     ConfigurableCrop(),
-    BottomSheetCrop(),
+    MultipleCrop(),
   ];
 
   @override

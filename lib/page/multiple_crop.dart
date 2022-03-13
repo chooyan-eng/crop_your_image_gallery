@@ -5,14 +5,14 @@ import 'package:cropyourimage_gallery/provider/image_data_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class BottomSheetCrop extends StatefulWidget {
-  const BottomSheetCrop();
+class MultipleCrop extends StatefulWidget {
+  const MultipleCrop();
 
   @override
-  _BottomSheetCropState createState() => _BottomSheetCropState();
+  _MultipleCropState createState() => _MultipleCropState();
 }
 
-class _BottomSheetCropState extends State<BottomSheetCrop> {
+class _MultipleCropState extends State<MultipleCrop> {
   final _controllers = [
     CropController(),
     CropController(),
@@ -53,7 +53,7 @@ class _BottomSheetCropState extends State<BottomSheetCrop> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'BottomSheet Crop',
+          'Multiple Crop',
           style: TextStyle(color: Colors.black87),
         ),
         iconTheme: IconThemeData(
