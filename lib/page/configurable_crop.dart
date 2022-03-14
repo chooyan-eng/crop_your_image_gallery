@@ -115,8 +115,8 @@ class _ConfigurableCropState extends State<ConfigurableCrop> {
                         ].map((shapeData) {
                           return InkWell(
                             onTap: () {
-                              _controller.aspectRatio = shapeData.aspectRatio;
                               _controller.withCircleUi = false;
+                              _controller.aspectRatio = shapeData.aspectRatio;
                             },
                             child: Padding(
                               padding: const EdgeInsets.all(8),

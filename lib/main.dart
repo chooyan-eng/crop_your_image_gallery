@@ -1,3 +1,4 @@
+import 'package:cropyourimage_gallery/page/interactive_crop.dart';
 import 'package:cropyourimage_gallery/page/multiple_crop.dart';
 import 'package:cropyourimage_gallery/page/colorful_screen_crop.dart';
 import 'package:cropyourimage_gallery/page/configurable_crop.dart';
@@ -40,8 +41,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   static const pages = const [
     FullScreenCrop(),
-    ColorefulScreenCrop(),
+    InteractiveCrop(),
     ConfigurableCrop(),
+    ColorefulScreenCrop(),
     MultipleCrop(),
   ];
 
