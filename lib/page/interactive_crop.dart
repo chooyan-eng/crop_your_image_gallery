@@ -69,14 +69,16 @@ class _InteractiveCropState extends State<InteractiveCrop> {
                                       _isProcessing = false;
                                     });
                                   },
-                                  initialAreaBuilder: (rect) => Rect.fromLTRB(
-                                    rect.left + 32,
-                                    rect.top + 32,
-                                    rect.right - 32,
-                                    rect.bottom - 32,
+                                  initialRectBuilder:
+                                      (viewportRect, imageRect) =>
+                                          Rect.fromLTRB(
+                                    viewportRect.left + 32,
+                                    viewportRect.top + 32,
+                                    viewportRect.right - 32,
+                                    viewportRect.bottom - 32,
                                   ),
                                   interactive: true,
-                                  fixArea: true,
+                                  fixCropRect: true,
                                   radius: 20,
                                   cornerDotBuilder: (_, __) =>
                                       const SizedBox.shrink(),
