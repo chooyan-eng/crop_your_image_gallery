@@ -23,7 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  crop_your_image: ^1.0.1
+  crop_your_image: ^2.0.0-dev.6
   provider: ^6.1.1
   http: ^0.13.1
 

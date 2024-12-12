@@ -70,11 +70,20 @@ class _ConfigurableCropState extends State<ConfigurableCrop> {
                           Crop(
                             controller: _controller,
                             image: imageData.loadData[2],
-                            onCropped: (cropped) {
-                              croppedData = cropped;
-                              isProcessing = false;
+                            onCropped: (result) {
+                              switch (result) {
+                                case CropSuccess(:final croppedImage):
+                                  croppedData = croppedImage;
+                                  isProcessing = false;
+                                case CropFailure():
+                                  isProcessing = false;
+                              }
                             },
-                            initialSize: 0.5,
+                            initialRectBuilder:
+                                InitialRectBuilder.withSizeAndRatio(
+                              size: 0.5,
+                              aspectRatio: null,
+                            ),
                             cornerDotBuilder: (size, cornerIndex) {
                               return _isPreviewing
                                   ? const SizedBox.shrink()

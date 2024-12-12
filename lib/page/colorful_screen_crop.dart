@@ -66,11 +66,19 @@ class _ColorefulScreenCropState extends State<ColorefulScreenCrop> {
                 child: Crop(
                   controller: _controller,
                   image: imageData.loadData[0],
-                  onCropped: (cropped) {
-                    croppedData = cropped;
-                    isProcessing = false;
+                  onCropped: (result) {
+                    switch (result) {
+                      case CropSuccess(:final croppedImage):
+                        croppedData = croppedImage;
+                        isProcessing = false;
+                      case CropFailure():
+                        isProcessing = false;
+                    }
                   },
-                  initialSize: 0.5,
+                  initialRectBuilder: InitialRectBuilder.withSizeAndRatio(
+                    size: 0.5,
+                    aspectRatio: null,
+                  ),
                   cornerDotBuilder: (size, edge) => DotControl(
                     color: {
                       EdgeAlignment.topLeft: Colors.amberAccent,
