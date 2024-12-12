@@ -66,9 +66,14 @@ class _FullScreenCropState extends State<FullScreenCrop> {
                 child: Crop(
                   controller: _controller,
                   image: imageData.loadData[1],
-                  onCropped: (cropped) {
-                    croppedData = cropped;
-                    isProcessing = false;
+                  onCropped: (result) {
+                    switch (result) {
+                      case CropSuccess(:final croppedImage):
+                        croppedData = croppedImage;
+                        isProcessing = false;
+                      case CropFailure():
+                        isProcessing = false;
+                    }
                   },
                 ),
                 replacement: _croppedData != null

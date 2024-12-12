@@ -63,19 +63,27 @@ class _InteractiveCropState extends State<InteractiveCrop> {
                                 child: Crop(
                                   controller: _controller,
                                   image: imageData.loadData.last,
-                                  onCropped: (data) {
-                                    setState(() {
-                                      _croppedData = data;
-                                      _isProcessing = false;
-                                    });
+                                  onCropped: (result) {
+                                    switch (result) {
+                                      case CropSuccess(:final croppedImage):
+                                        setState(() {
+                                          _croppedData = croppedImage;
+                                          _isProcessing = false;
+                                        });
+                                      case CropFailure():
+                                        setState(() {
+                                          _isProcessing = false;
+                                        });
+                                    }
                                   },
                                   initialRectBuilder:
-                                      (viewportRect, imageRect) =>
-                                          Rect.fromLTRB(
-                                    viewportRect.left + 32,
-                                    viewportRect.top + 32,
-                                    viewportRect.right - 32,
-                                    viewportRect.bottom - 32,
+                                      InitialRectBuilder.withBuilder(
+                                    (viewportRect, imageRect) => Rect.fromLTRB(
+                                      viewportRect.left + 32,
+                                      viewportRect.top + 32,
+                                      viewportRect.right - 32,
+                                      viewportRect.bottom - 32,
+                                    ),
                                   ),
                                   interactive: true,
                                   fixCropRect: true,

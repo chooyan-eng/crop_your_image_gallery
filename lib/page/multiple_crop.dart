@@ -78,11 +78,18 @@ class _MultipleCropState extends State<MultipleCrop> {
                             child: Crop(
                               controller: _controllers[index],
                               image: image,
-                              onCropped: (data) {
-                                setState(() {
-                                  _croppedDataList[index] = data;
-                                  _isProcessing = false;
-                                });
+                              onCropped: (result) {
+                                switch (result) {
+                                  case CropSuccess(:final croppedImage):
+                                    setState(() {
+                                      _croppedDataList[index] = croppedImage;
+                                      _isProcessing = false;
+                                    });
+                                  case CropFailure():
+                                    setState(() {
+                                      _isProcessing = false;
+                                    });
+                                }
                               },
                             ),
                             replacement: _croppedDataList[index] == null
